@@ -8,7 +8,8 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "flask",
-    "isort (>=7.0.0,<8.0.0)"
+    "isort (>=7.0.0,<8.0.0)",
+    "black (>=26.1.0,<27.0.0)"
 ]
 
 

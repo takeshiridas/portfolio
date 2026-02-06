@@ -3,11 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>Meu Portfólio - Vitor Takeshi Higashi Aredias</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Bem-vindo ao Meu Portfólio</h1>
-    <p>Site em construção...</p>
+    <header>
+        <nav>
+            <h1>Vitor Takeshi Higashi Aredias</h1>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sobre">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="sobre-content">
+                <img src="https://via.placeholder.com/200" alt="Sua foto" class="foto-perfil">
+                <div class="sobre-texto">
+                    <p>Olá! Sou estudante de Ciência da Computação apaixonado por desenvolvimento de software.</p>
+                    <p>Atualmente focado em aprender Python, desenvolvimento web e boas práticas de programação.</p>
+                    <p><strong>Habilidades:</strong> Python, Flask, SQLite, Git, GitHub</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projetos">
+    <div class="container">
+        <h2>Meus Projetos</h2>
+        <div class="projetos-grid">
+            {% for projeto in projetos %}
+                <div class="projeto-card">
+                    <h3>{{ projeto.nome }}</h3>
+                    <p>{{ projeto.descricao }}</p>
+                    <span class="badge">Dificuldade: {{ projeto.dificuldade }}/10</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 </body>
 </html>
